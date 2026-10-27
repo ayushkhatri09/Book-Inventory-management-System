@@ -59,7 +59,7 @@
 // }
 
 const API_BASE_URL = (
-  process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
+  process.env.NEXT_API_URL || "http://127.0.0.1:8000"
 ).replace(/\/+$/, "");
 
 const API_URL = `${API_BASE_URL}/api/books`;
