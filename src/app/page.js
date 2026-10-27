@@ -190,7 +190,7 @@ export default function HomePage() {
         </div>
 
         <div className="border-t border-stone-800 py-4 text-center text-xs text-stone-500">
-          © {new Date().getFullYear()} Bookshelf. All rights reserved.
+          © 2026 Bookshelf. All rights reserved.
         </div>
       </footer>
     </main>
