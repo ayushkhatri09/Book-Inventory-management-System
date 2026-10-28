@@ -190,12 +190,12 @@ export default function BorrowPage() {
         student_name: form.student_name.trim(),
         student_id: form.student_id.trim(),
       });
-      showMsg("ok", `"${res.book_title}" issue ho gayi. Wapsi ki date: ${res.due_date}`);
+      showMsg("ok", `"${res.book_title}" Book has been issued. Submission  date: ${res.due_date}`);
       setForm(EMPTY);
       load();
     } catch (err) {
       const first = Object.values(err || {})[0];
-      showMsg("error", Array.isArray(first) ? first[0] : "Borrow nahi ho paya.");
+      showMsg("error", Array.isArray(first) ? first[0] : "Problem in borrowing a book.");
     } finally {
       setSaving(false);
     }
@@ -204,10 +204,10 @@ export default function BorrowPage() {
   async function handleReturn(id) {
     try {
       await returnBorrow(id);
-      showMsg("ok", "Book wapas le li gayi.");
+      showMsg("ok", "Book has been return.");
       load();
     } catch {
-      showMsg("error", "Return nahi ho paya.");
+      showMsg("error", "Book not has been return.");
     }
   }
 
