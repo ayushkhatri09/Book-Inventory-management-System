@@ -90,7 +90,7 @@ function EditBookContent() {
       <div className="mx-auto max-w-xl">
         <Link
           href="/inventory"
-          className="text-sm text-blue-600 hover:underline"
+          className="text-sm text-orange-600 hover:underline"
         >
           ← Back to inventory
         </Link>

@@ -1,23 +1,10 @@
 import Link from "next/link";
 import Navbar from "./components/Navbar";
+import Reveal from "./components/Reveal";
 
 // Image badalni ho to sirf yahan naam badlo (file public/ folder mein honi chahiye)
 const HERO_IMAGE = "/hero.jpg";
 
-// const FEATURES = [
-//   { title: "Track every book", desc: "Stock, price aur category, sab ek jagah." },
-//   { title: "Issue with ease", desc: "Student ko book do, due date apne aap set." },
-//   { title: "Never run short", desc: "Low stock par turant red alert." },
-// ];
-
-// const ABOUT_CARDS = [
-//   { no: "01", title: "Add Books", desc: "Ek ek karke ya bulk form se dozens of books ek saath inventory mein daalo." },
-//   { no: "02", title: "Search & Filter", desc: "Title, author ya ISBN se dhundho, category se chhaanto, price ya stock se sort karo." },
-//   { no: "03", title: "Low Stock Alerts", desc: "Jis book ka stock 5 se kam ho, wo red badge ke saath turant dikh jaati hai." },
-//   { no: "04", title: "Borrow & Return", desc: "Student ke naam aur ID ke saath book issue karo. Return par stock apne aap wapas badh jaata hai." },
-//   { no: "05", title: "Live Dashboard", desc: "Total books, total stock, inventory value aur low-stock count, sab ek nazar mein." },
-//   { no: "06", title: "Built on Solid Tech", desc: "Next.js frontend aur Django REST Framework backend, ek real-world architecture." },
-// ];
 
 
 const FEATURES = [
@@ -72,7 +59,7 @@ const ABOUT_CARDS = [
 const SOCIALS = [
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/ayush-khatri-ay17kh05/",
     path: "M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z",
   },
   {
@@ -105,7 +92,7 @@ export default function HomePage() {
         {/* Navbar */}
       <Navbar />
         {/* Hero content */}
-        <div className="mx-auto flex w-full max-w-6xl flex-1 items-center px-6 pb-20 pt-24">
+        {/* <div className="mx-auto flex w-full max-w-6xl flex-1 items-center px-6 pb-20 pt-24">
           <div className="max-w-2xl">
             <p className="mb-4 text-xs uppercase tracking-[0.3em] text-amber-300">
               Library &amp; Bookstore Manager
@@ -142,54 +129,123 @@ Keep every book organized, every record accurate, and your entire inventory unde
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
+
+        {/* Hero content */}
+<div className="mx-auto flex w-full max-w-6xl flex-1 items-center px-6 pb-20 pt-24">
+  <div className="max-w-2xl">
+    <p
+      className="hero-in mb-4 text-xs uppercase tracking-[0.3em] text-amber-300"
+      style={{ animationDelay: "200ms" }}
+    >
+      Library &amp; Bookstore Manager
+    </p>
+
+    <h1 className="font-serif text-4xl font-semibold leading-tight text-white sm:text-6xl">
+      <span className="line-mask">
+        <span className="line-up" style={{ animationDelay: "400ms" }}>Where every book</span>
+      </span>
+      <span className="line-mask">
+        <span className="line-up" style={{ animationDelay: "600ms" }}>
+          finds its <span className="text-amber-400">shelf.</span>
+        </span>
+      </span>
+    </h1>
+
+    <div className="draw-line mt-5 h-0.5 w-24 bg-amber-500" style={{ animationDelay: "1000ms" }} />
+
+    <p
+      className="hero-in mt-5 max-w-xl font-serif text-lg italic text-stone-300"
+      style={{ animationDelay: "1100ms" }}
+    >
+      A great library is defined not just by its books, but by how well they are managed.
+      Keep every book organized, every record accurate, and your entire inventory under control, all in one place.
+    </p>
+
+    <div
+      className="hero-in mt-8 flex flex-wrap items-center gap-3"
+      style={{ animationDelay: "1400ms" }}
+    >
+      <Link
+        href="/books/new"
+        className="rounded-md bg-amber-500 px-5 py-2 text-sm font-semibold text-stone-900 transition hover:-translate-y-0.5 hover:bg-amber-400"
+      >
+        + Add Book
+      </Link>
+      <Link
+        href="/borrow"
+        className="rounded-md border border-amber-300 px-5 py-2 text-sm font-semibold text-amber-100 transition hover:-translate-y-0.5 hover:bg-amber-300/10"
+      >
+        Borrow Book
+      </Link>
+      <Link
+        href="/inventory"
+        className="px-2 py-2 text-sm text-stone-300 underline-offset-4 hover:text-white hover:underline"
+      >
+        View Inventory →
+      </Link>
+    </div>
+  </div>
+</div>
+
+{/* Scroll hint */}
+<a
+  href="#features"
+  aria-label="Scroll down"
+  className="hero-in absolute bottom-6 left-1/2 -translate-x-1/2 text-amber-200/80"
+  style={{ animationDelay: "2000ms" }}
+>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="bob h-6 w-6">
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+</a>
       </section>
 
-      {/* FEATURE STRIP */}
-      <section className="border-t border-stone-200 bg-stone-50">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 sm:grid-cols-3">
-          {FEATURES.map((f) => (
-            <div key={f.title}>
-              <div className="mb-3 h-0.5 w-8 bg-amber-500" />
-              <h3 className="font-serif text-xl font-semibold">{f.title}</h3>
-              <p className="mt-1 text-sm text-stone-600">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-        <p className="pb-8 text-center font-serif text-sm italic text-stone-400">
-          “A reader lives a thousand lives.” Keep the shelves full.
-        </p>
-      </section>
+      <section id="features" className="border-t border-stone-200 bg-stone-50">
+  <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 sm:grid-cols-3">
+    {FEATURES.map((f, i) => (
+      <Reveal key={f.title} delay={i * 150}>
+        <div className="mb-3 h-0.5 w-8 bg-amber-500" />
+        <h3 className="font-serif text-xl font-semibold">{f.title}</h3>
+        <p className="mt-1 text-sm text-stone-600">{f.desc}</p>
+      </Reveal>
+    ))}
+  </div>
+  <Reveal direction="fade" delay={300}>
+    <p className="pb-8 text-center font-serif text-sm italic text-stone-400">
+      “A reader lives a thousand lives.” Keep the shelves full.
+    </p>
+  </Reveal>
+</section>
 
             {/* ABOUT SECTION */}
-      <section id="about" className="border-t border-stone-200 bg-white scroll-mt-20">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <p className="text-xs uppercase tracking-[0.3em] text-amber-600">About</p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">
-            Simple System with great work.
-          </h2>
-          <p className="mt-3 max-w-2xl font-serif italic text-stone-500">
-            Simplify the day-to-day management of your library or bookstore.
+      <div id="about" className="  mx-auto max-w-6xl px-6 py-16 ">
+  <Reveal>
+    <p className="text-xs uppercase tracking-[0.3em] text-amber-600">About</p>
+    <h2 className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">
+      Simple System with great work.
+    </h2>
+    <p className="mt-3 max-w-2xl font-serif italic text-stone-500">
+      Simplify the day-to-day management of your library or bookstore.
+      Add books, track inventory, monitor stock levels, and issue books to students, all from one simple, easy-to-use platform.
+    </p>
+  </Reveal>
 
-Add books, track inventory, monitor stock levels, and issue books to students—all from one simple, easy-to-use platform.
-          </p>
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {ABOUT_CARDS.map((c) => (
-              <div
-                key={c.no}
-                className="rounded-lg border border-stone-200 bg-stone-50 p-6 transition hover:-translate-y-1 hover:border-amber-400 hover:shadow-md"
-              >
-                <span className="font-serif text-2xl text-amber-500">{c.no}</span>
-                <h3 className="mt-2 font-serif text-lg font-semibold">{c.title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-stone-600">{c.desc}</p>
-              </div>
-            ))}
-          </div>
+  <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {ABOUT_CARDS.map((c, i) => (
+      <Reveal key={c.no} delay={(i % 3) * 120} className="h-full">
+        <div className="h-full rounded-lg border border-stone-200 bg-stone-50 p-6 transition hover:-translate-y-1 hover:border-amber-400 hover:shadow-md">
+          <span className="font-serif text-2xl text-amber-500">{c.no}</span>
+          <h3 className="mt-2 font-serif text-lg font-semibold">{c.title}</h3>
+          <p className="mt-1 text-sm leading-relaxed text-stone-600">{c.desc}</p>
         </div>
-      </section>
+      </Reveal>
+    ))}
+  </div>
+</div>
 
             {/* FOOTER */}
+            <Reveal direction="fade">
       <footer className="bg-stone-900 text-stone-300">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 sm:grid-cols-3">
           <div>
@@ -234,6 +290,7 @@ A simple inventory and book borrowing system for libraries and bookstores.      
           © 2026 Bookshelf. All rights reserved.
         </div>
       </footer>
+      </Reveal>
     </main>
   );
 }

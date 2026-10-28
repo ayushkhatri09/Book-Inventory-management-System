@@ -16,7 +16,7 @@ export default function NewBookPage() {
   return (
     <main className="min-h-screen bg-gray-50 p-6 text-gray-900">
       <div className="mx-auto max-w-xl">
-        <Link href="/" className="text-sm text-blue-600 hover:underline">
+        <Link href="/" className="text-sm text-orange-600 hover:underline">
           ← Back to inventory
         </Link>
         <h1 className="mb-6 mt-2 text-3xl font-bold">Add New Book</h1>

@@ -27,3 +27,66 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.anim-fade-up {
+  opacity: 0;
+  animation: fade-up 0.5s ease-out forwards;
+}
+.anim-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Jinko animation pasand nahi (accessibility), unke liye band */
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up, .anim-shake { animation: none; opacity: 1; }
+}
+
+/* ---------- HERO ENTRANCE ---------- */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(28px); filter: blur(6px); }
+  to   { opacity: 1; transform: none; filter: blur(0); }
+}
+@keyframes line-up {
+  from { transform: translateY(110%); }
+  to   { transform: translateY(0); }
+}
+@keyframes draw-line {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(8px); }
+}
+
+.hero-in {
+  opacity: 0;
+  animation: hero-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.line-mask { display: block; overflow: hidden; padding-bottom: 0.15em; }
+.line-up {
+  display: block;
+  transform: translateY(110%);
+  animation: line-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.draw-line {
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: draw-line 0.8s ease-out forwards;
+}
+.bob { animation: bob 1.8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-in, .line-up, .draw-line { animation: none; opacity: 1; transform: none; filter: none; }
+  .bob { animation: none; }
+}
