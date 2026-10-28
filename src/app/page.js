@@ -1,22 +1,73 @@
 import Link from "next/link";
+import Navbar from "./components/Navbar";
 
 // Image badalni ho to sirf yahan naam badlo (file public/ folder mein honi chahiye)
 const HERO_IMAGE = "/hero.jpg";
 
+// const FEATURES = [
+//   { title: "Track every book", desc: "Stock, price aur category, sab ek jagah." },
+//   { title: "Issue with ease", desc: "Student ko book do, due date apne aap set." },
+//   { title: "Never run short", desc: "Low stock par turant red alert." },
+// ];
+
+// const ABOUT_CARDS = [
+//   { no: "01", title: "Add Books", desc: "Ek ek karke ya bulk form se dozens of books ek saath inventory mein daalo." },
+//   { no: "02", title: "Search & Filter", desc: "Title, author ya ISBN se dhundho, category se chhaanto, price ya stock se sort karo." },
+//   { no: "03", title: "Low Stock Alerts", desc: "Jis book ka stock 5 se kam ho, wo red badge ke saath turant dikh jaati hai." },
+//   { no: "04", title: "Borrow & Return", desc: "Student ke naam aur ID ke saath book issue karo. Return par stock apne aap wapas badh jaata hai." },
+//   { no: "05", title: "Live Dashboard", desc: "Total books, total stock, inventory value aur low-stock count, sab ek nazar mein." },
+//   { no: "06", title: "Built on Solid Tech", desc: "Next.js frontend aur Django REST Framework backend, ek real-world architecture." },
+// ];
+
+
 const FEATURES = [
-  { title: "Track every book", desc: "Stock, price aur category, sab ek jagah." },
-  { title: "Issue with ease", desc: "Student ko book do, due date apne aap set." },
-  { title: "Never run short", desc: "Low stock par turant red alert." },
+  {
+    title: "Track Every Book",
+    desc: "Manage stock, prices, and categories—all in one place.",
+  },
+  {
+    title: "Easy Book Issuing",
+    desc: "Issue books to students and automatically set due dates.",
+  },
+  {
+    title: "Never Run Out of Stock",
+    desc: "Get instant alerts when book stock levels fall below the limit.",
+  },
 ];
 
 const ABOUT_CARDS = [
-  { no: "01", title: "Add Books", desc: "Ek ek karke ya bulk form se dozens of books ek saath inventory mein daalo." },
-  { no: "02", title: "Search & Filter", desc: "Title, author ya ISBN se dhundho, category se chhaanto, price ya stock se sort karo." },
-  { no: "03", title: "Low Stock Alerts", desc: "Jis book ka stock 5 se kam ho, wo red badge ke saath turant dikh jaati hai." },
-  { no: "04", title: "Borrow & Return", desc: "Student ke naam aur ID ke saath book issue karo. Return par stock apne aap wapas badh jaata hai." },
-  { no: "05", title: "Live Dashboard", desc: "Total books, total stock, inventory value aur low-stock count, sab ek nazar mein." },
-  { no: "06", title: "Built on Solid Tech", desc: "Next.js frontend aur Django REST Framework backend, ek real-world architecture." },
+  {
+    no: "01",
+    title: "Add Books",
+    desc: "Add dozens of books to your inventory at once using individual entries or bulk forms.",
+  },
+  {
+    no: "02",
+    title: "Search & Filter",
+    desc: "Find books by title, author, or ISBN. Filter by category and sort by price or stock.",
+  },
+  {
+    no: "03",
+    title: "Low Stock Alerts",
+    desc: "Books with fewer than 5 copies in stock are instantly highlighted with a red badge.",
+  },
+  {
+    no: "04",
+    title: "Borrow & Return",
+    desc: "Issue books using a student's name and ID. When a book is returned, the available stock is automatically updated.",
+  },
+  {
+    no: "05",
+    title: "Live Dashboard",
+    desc: "View total books, total stock, inventory value, and low-stock counts at a glance.",
+  },
+  {
+    no: "06",
+    title: "Built on Solid Technology",
+    desc: "Powered by a Next.js frontend and Django REST Framework backend, following a real-world application architecture.",
+  },
 ];
+
 
 const SOCIALS = [
   {
@@ -52,20 +103,9 @@ export default function HomePage() {
         }}
       >
         {/* Navbar */}
-        <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-          <span className="font-serif text-lg font-semibold tracking-wide text-amber-100">
-            📚 Bookshelf
-          </span>
-          <div className="flex gap-5 text-sm text-stone-200">
-            <a href="#about" className="hover:text-amber-200">About</a>
-            <Link href="/inventory" className="hover:text-amber-200">Inventory</Link>
-            <Link href="/borrow" className="hover:text-amber-200">Borrow</Link>
-            <Link href="/books/bulk" className="hover:text-amber-200">Bulk Add</Link>
-          </div>
-        </nav>
-
+      <Navbar />
         {/* Hero content */}
-        <div className="mx-auto flex w-full max-w-6xl flex-1 items-center px-6 pb-20">
+        <div className="mx-auto flex w-full max-w-6xl flex-1 items-center px-6 pb-20 pt-24">
           <div className="max-w-2xl">
             <p className="mb-4 text-xs uppercase tracking-[0.3em] text-amber-300">
               Library &amp; Bookstore Manager
@@ -76,8 +116,9 @@ export default function HomePage() {
               finds its shelf.
             </h1>
             <p className="mt-5 max-w-xl font-serif text-lg italic text-stone-300">
-              Ek achhi library ki pehchaan uski books se nahi, uske hisaab-kitaab se hoti hai.
-              Apni har kitaab ko sambhalo, simple aur saaf tareeke se.
+              A great library is defined not just by its books, but by how well they are managed.
+
+Keep every book organized, every record accurate, and your entire inventory under control—all in one place.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -121,15 +162,16 @@ export default function HomePage() {
       </section>
 
             {/* ABOUT SECTION */}
-      <section id="about" className="border-t border-stone-200 bg-white">
+      <section id="about" className="border-t border-stone-200 bg-white scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <p className="text-xs uppercase tracking-[0.3em] text-amber-600">About</p>
           <h2 className="mt-2 font-serif text-3xl font-semibold sm:text-4xl">
-            Ek simple system, bade kaam ke liye.
+            Simple System with great work.
           </h2>
           <p className="mt-3 max-w-2xl font-serif italic text-stone-500">
-            Ye project library aur bookstore ke roz ke hisaab-kitaab ko aasan banata hai:
-            books add karo, stock dekho, aur students ko books issue karo.
+            Simplify the day-to-day management of your library or bookstore.
+
+Add books, track inventory, monitor stock levels, and issue books to students—all from one simple, easy-to-use platform.
           </p>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -153,8 +195,7 @@ export default function HomePage() {
           <div>
             <p className="font-serif text-lg font-semibold text-amber-100">📚 Bookshelf</p>
             <p className="mt-2 text-sm text-stone-400">
-              Library aur bookstore ke liye ek simple inventory aur borrow system.
-            </p>
+A simple inventory and book borrowing system for libraries and bookstores.            </p>
           </div>
 
           <div>

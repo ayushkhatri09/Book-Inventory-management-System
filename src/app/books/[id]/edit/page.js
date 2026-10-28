@@ -72,7 +72,7 @@ function EditBookContent() {
     getBook(id)
       .then(setBook)
       .catch(() =>
-        setError("Book not found, or the Django server is not running.")
+        setError("Book not found, or the  server is not running.")
       );
   }, [id]);
 

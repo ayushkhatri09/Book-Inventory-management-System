@@ -19,7 +19,7 @@ export default function BorrowPage() {
       setBooks(b.filter((x) => x.quantity > 0)); // sirf available books
       setBorrows(br.filter((x) => !x.returned_at)); // sirf abhi issued
     } catch {
-      setMsg({ type: "error", text: "Backend se connect nahi ho pa raha." });
+      setMsg({ type: "error", text: "Error will connecting server" });
     }
   }
 
@@ -84,7 +84,7 @@ export default function BorrowPage() {
           <div>
             <label className="mb-1 block text-sm font-medium text-gray-700">Book</label>
             <select name="book" value={form.book} onChange={handleChange} className={inputClass}>
-              <option value="">Book chuno...</option>
+              <option value="">Choose a Book...</option>
               {books.map((b) => (
                 <option key={b.id} value={b.id}>{b.title} ({b.quantity} available)</option>
               ))}
@@ -103,9 +103,9 @@ export default function BorrowPage() {
           </button>
         </form>
 
-        <h2 className="mb-3 mt-8 text-xl font-semibold">Abhi issued books ({borrows.length})</h2>
+        <h2 className="mb-3 mt-8 text-xl font-semibold"> Issued Books ({borrows.length})</h2>
         {borrows.length === 0 ? (
-          <p className="rounded-xl border bg-white p-6 text-center text-gray-500">Abhi koi book issue nahi hai.</p>
+          <p className="rounded-xl border bg-white p-6 text-center text-gray-500">Till yet there is not issued any book.</p>
         ) : (
           <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
             <table className="w-full text-left text-sm">

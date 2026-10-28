@@ -5,7 +5,7 @@ export default function BookTable({ books, onDelete }) {
   if (books.length === 0) {
     return (
       <p className="rounded-xl border bg-white p-8 text-center text-gray-500">
-        Koi book nahi mili. Pehle ek book add karo.
+        No books found. Please add a book first.
       </p>
     );
   }

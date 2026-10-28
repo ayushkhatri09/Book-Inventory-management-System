@@ -28,7 +28,7 @@ async function loadData() {
     setStats(statsData);
     setError("");
   } catch (err) {
-    setError("Backend se connect nahi ho pa raha. Django server chal raha hai?");
+    setError("Unable to connect to the backend. Is the server running?");
   } finally {
     setLoading(false);
   }
@@ -64,7 +64,7 @@ async function handleDelete(book) {
   </Link>
 
   <Link
-  href="/books/bulks"
+  href="/books/bulk"
   className="rounded-lg border border-blue-600 px-4 py-2 text-sm font-semibold text-blue-600 hover:bg-blue-50"
 >
   Bulk Add
